@@ -41,7 +41,8 @@ public class Main {
  class Zoo {
     //Zoo myZoo = new Zoo("frigya", "sousse", 20);
     Animal[] animals = new Animal[25];
-    String nameZ;
+     private int compteurAnimaux = 0;
+     String nameZ;
     String City;
     int nbrCages;
 
@@ -58,6 +59,22 @@ public class Main {
         System.out.println("Number of Cages: " + nbrCages);
 
     }
-}
+
+     boolean addAnimal(Animal animal) {
+         if (compteurAnimaux < animals.length) {
+             for (int i = 0; i < animals.length; i++) {
+                 animals[compteurAnimaux] = animal;
+                 compteurAnimaux++;
+                 System.out.println(animals[i]);
+             }
+             return true;
+         } else {
+             System.out.println("Impossible d'ajouter l'animal. Le zoo est plein.");
+             return false;
+         }
+     }
+
+ }
+
 
 
